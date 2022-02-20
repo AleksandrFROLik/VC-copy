@@ -23,8 +23,6 @@ export const UserItems = () => {
                         <Box sx={{
                             position: 'relative',
                             marginRight: 1,
-                            // overflow: 'hidden',
-                            // borderRadius: '50%'
                         }}>
                             <Avatar
                                 src='https://cdn0.iconfinder.com/data/icons/hipster-men-style/100/Hipster-11-512.png'
