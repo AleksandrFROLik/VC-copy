@@ -1,12 +1,12 @@
 import React, {FC} from 'react';
-import Button from "@mui/material/Button";
+import Box from "@mui/material/Box";
+import {AddPosts} from "./addPosts/AddPosts";
 
 export const Home: FC = () => {
     return (
-        <div>
-            Home
-            <Button variant="contained">Hello World</Button>
-        </div>
+        <Box>
+            <AddPosts/>
+        </Box>
     );
 };
 
