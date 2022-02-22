@@ -1,6 +1,5 @@
 import React from 'react';
 import {Card, List, ListItem, ListItemButton, ListItemIcon, ListItemText} from "@mui/material";
-import {QuestionAnswer} from "@mui/icons-material";
 import {useNavigate} from "react-router-dom";
 import {dataMenu} from "./DataMenu";
 
