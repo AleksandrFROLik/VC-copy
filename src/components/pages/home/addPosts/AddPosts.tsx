@@ -1,5 +1,5 @@
 import Box from '@mui/material/Box';
-import React, {useState} from 'react';
+import React, {useState, KeyboardEvent} from 'react';
 import {TextField} from "@mui/material";
 import {IPost, TypeSetState} from "../../../../types/types";
 import {users} from "../../../layout/sidebar/menu/dataUsers";
@@ -10,15 +10,20 @@ type AddPostsType = {
 
 export const AddPosts = ({setPosts}: AddPostsType) => {
     const [content, setContent] = useState('')
-    const addPostHandler = () => {
-        setPosts(prev => [
+    const addPostHandler = (e:KeyboardEvent<HTMLInputElement>) => {
+        if(e.key === 'Enter') {
             {
-                author: users[0],
-                content,
-                createdAt: '5 minuts ago'
-            },
-            ...prev,
-        ])
+                setPosts(prev => [
+                    {
+                        author: users[0],
+                        content,
+                        createdAt: '5 minutes ago'
+                    },
+                    ...prev,
+                ])
+            }
+            setContent('')
+        }
     }
     return (
         <Box sx={{
@@ -41,8 +46,6 @@ export const AddPosts = ({setPosts}: AddPostsType) => {
                        onChange={(e) => setContent(e.currentTarget.value)}
                        value={content}
             />
-
-
         </Box>
     );
 };

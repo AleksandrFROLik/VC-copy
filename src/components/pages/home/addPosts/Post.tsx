@@ -14,12 +14,12 @@ export const Post = ({posts}: PostType) => {
     return (
         <>{
             posts.map(post => (
-                <Box sx={{
+                <Box  sx={{
                     border: '1px solid #ccc',
                     borderRadius: '10px',
                     padding: '2px',
                     marginTop: '5px'
-                }}>
+                }} key={post.author._id}>
 
                     <Link key={post.author.avatar}
                           to={`profile/${post.author._id}`}
